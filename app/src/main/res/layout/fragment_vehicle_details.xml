@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vehicle Details"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvVehicleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Royal Enfield"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvVehicleModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android Automotive Test Vehicle"
+        android:textSize="18sp" />
+
+</LinearLayout>
