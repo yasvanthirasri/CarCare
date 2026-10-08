@@ -34,7 +34,7 @@ public class DashboardFragment extends Fragment {
         Button increaseButton = view.findViewById(R.id.btnIncreaseSpeed);
         Button setSpeedButton = view.findViewById(R.id.btnSetSpeed);
 
-        viewModel = new ViewModelProvider(this)
+        viewModel = new ViewModelProvider(requireActivity())
                 .get(DashboardViewModel.class);
 
         viewModel.speed.observe(getViewLifecycleOwner(), newSpeed -> {
@@ -62,6 +62,23 @@ public class DashboardFragment extends Fragment {
             intent.putExtra("vehicle_name", "Royal Enfield");
 
             startActivity(intent);
+        });
+
+        Button vehicleInfoButton =
+                view.findViewById(R.id.btnVehicleInfo);
+
+        vehicleInfoButton.setOnClickListener(v -> {
+
+            requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(
+                            R.id.fragment_container,
+                            new VehicleInfoFragment()
+                    )
+                    .addToBackStack(null)
+                    .commit();
+
         });
 
         return view;
