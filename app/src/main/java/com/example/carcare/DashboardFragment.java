@@ -80,6 +80,22 @@ public class DashboardFragment extends Fragment {
                     .commit();
 
         });
+        Button vehicleListButton =
+                view.findViewById(R.id.btnVehicleList);
+
+        vehicleListButton.setOnClickListener(v -> {
+
+            requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(
+                            R.id.fragment_container,
+                            new VehicleListFragment()
+                    )
+                    .addToBackStack(null)
+                    .commit();
+
+        });
 
         return view;
     }
